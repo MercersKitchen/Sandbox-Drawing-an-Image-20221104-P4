@@ -8,6 +8,7 @@ appWidth = width;
 appHeight = height;
 //
 //Population
+pic = loadImage("");
 backgroundImageX = appWidth*0;
 backgroundImageY = appHeight*0;
 backgroundImageWidth = appWidth-1;
