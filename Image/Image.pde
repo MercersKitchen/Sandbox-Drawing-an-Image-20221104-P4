@@ -9,4 +9,4 @@ appHeight = height;
 //Rectangular Layout and Image Drawing to CANVAS
 rect(backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 //
-image();
+image( pic, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
