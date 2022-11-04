@@ -1,6 +1,7 @@
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
+PImage pic;
 //
 size(800, 600); //Landscape
 //Copy Display Algorithm
