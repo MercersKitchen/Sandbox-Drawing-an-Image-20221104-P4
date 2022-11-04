@@ -8,10 +8,10 @@ appWidth = width;
 appHeight = height;
 //
 //Population
-backgroundImageX = appWidth;
-backgroundImageY = appHeight;
-backgroundImageWidth = appWidth;
-backgroundImageHeight = appHeight;
+backgroundImageX = appWidth*0;
+backgroundImageY = appHeight*0;
+backgroundImageWidth = appWidth-1;
+backgroundImageHeight = appHeight-1;
 //
 //Rectangular Layout and Image Drawing to CANVAS
 rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
