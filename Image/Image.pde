@@ -1,8 +1,12 @@
+//To Do, add the printlns to verify the values
+//Algorithm works when image is bigger than the CANVAS, not smaller
+//Different Algorithm is necessary - work to get above 65%
+//
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
-float smallerDimension, largerDimension;
-Boolean widthLarger, heightLarger;
+float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
+Boolean widthLarger=false, heightLarger=false;
 PImage pic;
 Boolean nightMode=false;
 //
