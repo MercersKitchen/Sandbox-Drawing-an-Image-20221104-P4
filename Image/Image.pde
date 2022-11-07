@@ -13,7 +13,22 @@ appHeight = height;
 //Obi-wan-star-wars-jedi-23864621-800-600.jpg
 int picWidth = 800;
 int picHeight = 600;
-
+//Image Orientation: Landscape, Square, Portrait
+if ( picWidth >= picHeight ) { //True if Landscape or Square
+  largerDimension = picWidth;
+  smallerDimension = picHeight;
+  widthLarger = true;
+} else { //False if Portrait
+  largerDimension = picHeight;
+  smallerDimension = picWidth;
+  heightLarger = true;
+}
+//
+//Aspect Ratio Calculations
+if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
+if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
+if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
+if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
 //Population
 pic = loadImage("../Images Used/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
 backgroundImageX = appWidth*0;
