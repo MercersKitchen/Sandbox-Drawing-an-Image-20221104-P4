@@ -10,6 +10,9 @@ appWidth = width;
 appHeight = height;
 //
 //Aspect Ratio of Background Image
+//Obi-wan-star-wars-jedi-23864621-800-600.jpg
+int picWidth = 800;
+int picHeight = 600;
 
 //Population
 pic = loadImage("../Images Used/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
