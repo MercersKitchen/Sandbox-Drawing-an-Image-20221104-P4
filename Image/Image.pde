@@ -39,14 +39,17 @@ if ( picWidth >= picHeight ) { //True if Landscape or Square
  */
 //
 //Better Image Stretch Algorithm
-//We know the width is the larger dimension
 float picWidthAdjusted, picHeightAdjusted;
+//We know the width is the larger dimension
 if ( appWidth >= picWidth ) {
   picWidthAdjusted = appWidth;
   //
   if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
   if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
+  //
+  if (  ) {} else {}
 } else {
+  //Image smaller than CANVAS, needs separate algorithm
 }
 //Population
 pic = loadImage("../Images Used/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
