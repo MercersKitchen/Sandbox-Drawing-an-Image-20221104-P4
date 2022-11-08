@@ -10,7 +10,7 @@ Boolean widthLarger=false, heightLarger=false;
 PImage pic;
 Boolean nightMode=false;
 //
-size(800, 600); //Landscape
+size(1000, 800); //Landscape
 //Copy Display Algorithm from Hello World
 appWidth = width;
 appHeight = height;
@@ -42,7 +42,7 @@ if ( picWidth >= picHeight ) { //True if Landscape or Square
 float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
 //We know the width is the larger dimension
 if ( appWidth >= picWidth ) {
-  picWidthAdjusted = appWidth;
+  picWidthAdjusted = appWidth; //Stretching larger dimension
   //
   if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
   if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
