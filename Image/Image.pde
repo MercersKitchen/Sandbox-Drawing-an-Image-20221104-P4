@@ -36,6 +36,7 @@ if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
 if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
 if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
 if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
+//
 //Population
 pic = loadImage("../Images Used/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
 backgroundImageX = appWidth*0;
@@ -47,6 +48,9 @@ backgroundImageHeight = appHeight-1;
 float picWidthAdjusted, picHeightAdjusted;
 picWidthAdjusted = backgroundImageWidth * imageWidthRatio;
 picHeightAdjusted = backgroundImageHeight * imageHeightRatio;
+//
+println( appWidth, picWidth, picWidthAdjusted );
+println();
 //Rectangular Layout and Image Drawing to CANVAS
 //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 //
