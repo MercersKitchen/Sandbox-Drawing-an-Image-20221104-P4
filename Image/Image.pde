@@ -31,12 +31,23 @@ if ( picWidth >= picHeight ) { //True if Landscape or Square
   heightLarger = true;
 }
 //
-//Aspect Ratio Calculations
-if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
-if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
-if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
-if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
+/*Aspect Ratio Calculations, Older Calculations
+ if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
+ if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
+ if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
+ if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
+ */
 //
+//Better Image Stretch Algorithm
+//We know the width is the larger dimension
+float picWidthAdjusted, picHeightAdjusted;
+if ( appWidth >= picWidth ) {
+  picWidthAdjusted = appWidth;
+  //
+  if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
+  if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
+} else {
+}
 //Population
 pic = loadImage("../Images Used/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
 backgroundImageX = appWidth*0;
@@ -45,12 +56,12 @@ backgroundImageWidth = appWidth-1;
 backgroundImageHeight = appHeight-1;
 //
 // Adjust Iamge Varaibles for Asepct Ratio
-float picWidthAdjusted, picHeightAdjusted;
 picWidthAdjusted = backgroundImageWidth * imageWidthRatio;
 picHeightAdjusted = backgroundImageHeight * imageHeightRatio;
 //
 println( appWidth, picWidth, picWidthAdjusted );
-println();
+println( appHeight, picHeight, picHeightAdjusted );
+//
 //Rectangular Layout and Image Drawing to CANVAS
 //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 //
