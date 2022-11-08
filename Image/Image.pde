@@ -47,7 +47,13 @@ if ( appWidth >= picWidth ) {
   if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
   if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
   //
-  if (  ) {} else {}
+  if ( appHeight >= picHeight ) {
+    //Calculated Dimension b/c smaller than width
+    if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
+    if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
+  } else {
+    //Image smaller than CANVAS needs separate algorithm
+  }
 } else {
   //Image smaller than CANVAS, needs separate algorithm
 }
