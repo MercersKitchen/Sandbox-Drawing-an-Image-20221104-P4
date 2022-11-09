@@ -10,6 +10,15 @@ Boolean widthLarger=false, heightLarger=false;
 PImage pic;
 Boolean nightMode=false;
 //
+void setup() {}//End setup
+//
+void draw() {}//End draw
+//
+void keyPressed() {}//End keyPressed
+//
+void mousePressed() {}//End mousePressed
+//
+//End Main Program
 size(1000, 800); //Landscape
 //Copy Display Algorithm from Hello World
 appWidth = width;
