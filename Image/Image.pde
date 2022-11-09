@@ -52,6 +52,7 @@ void setup()
       }
     } else {
       //Image smaller than CANVAS needs separate algorithm
+      println("CANVAS is smaller than Image");
     }
   } else {
     //Image smaller than CANVAS, needs separate algorithm
