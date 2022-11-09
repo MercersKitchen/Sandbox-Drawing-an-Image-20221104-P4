@@ -77,7 +77,7 @@ void setup()
   //
   //Background Image must be single executed code
   if ( nightMode == false ) tint(255, 50); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
-  if ( nightMode == true ) tint(64, 64, 30); //RGB: Night Mode
+  if ( nightMode == true ) tint(64, 64, 40, 128); //RGB: Night Mode
   image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
 }//End setup
 //
