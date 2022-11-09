@@ -59,6 +59,22 @@ void setup()
     println("CANVAS is smaller than Image");
   }
   //
+  //Population
+  pic = loadImage("../Images Used/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
+  backgroundImageX = appWidth*0;
+  backgroundImageY = appHeight*0;
+  backgroundImageWidth = appWidth-1;
+  backgroundImageHeight = appHeight-1;
+  //
+  //Verify Variable Values after Algorithm
+  println("App Width:", appWidth, " and App Height:", appHeight);
+  println("Image dimensions are:", picWidth, picHeight);
+  println("Larger Image dimension is:", largerDimension);
+  println("Adjusted Image dimesnions are (stretch is goal):", picWidthAdjusted, picHeightAdjusted);
+  //
+  //Rectangular Layout and Image Drawing to CANVAS
+  //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+  //
 }//End setup
 //
 void draw() {
@@ -72,29 +88,7 @@ void mousePressed() {
 //
 //End Main Program
 
-//Aspect Ratio of Background Image
 
-/*Aspect Ratio Calculations, Older Calculations
- if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
- if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
- if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
- if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
- */
-//
-
-//Population
-pic = loadImage("../Images Used/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
-backgroundImageX = appWidth*0;
-backgroundImageY = appHeight*0;
-backgroundImageWidth = appWidth-1;
-backgroundImageHeight = appHeight-1;
-//
-println( appWidth, picWidth, picWidthAdjusted );
-println( appHeight, picHeight, picHeightAdjusted );
-//
-//Rectangular Layout and Image Drawing to CANVAS
-//rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-//
 if ( nightMode == false ) tint(255, 64); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
 if ( nightMode == true ) tint(64, 64, 40); //RGB: Night Mode
 image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
