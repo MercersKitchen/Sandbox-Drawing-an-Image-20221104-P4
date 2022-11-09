@@ -8,7 +8,7 @@ float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageH
 float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
 Boolean widthLarger=false, heightLarger=false;
 PImage pic;
-Boolean nightMode=false;
+Boolean nightMode=true;
 //
 void setup()
 {
@@ -75,6 +75,10 @@ void setup()
   //Rectangular Layout and Image Drawing to CANVAS
   //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   //
+  //Background Image must be single executed code
+  if ( nightMode == false ) tint(255, 50); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
+  if ( nightMode == true ) tint(64, 64, 30); //RGB: Night Mode
+  image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
 }//End setup
 //
 void draw() {
@@ -87,8 +91,3 @@ void mousePressed() {
 }//End mousePressed
 //
 //End Main Program
-
-
-if ( nightMode == false ) tint(255, 64); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
-if ( nightMode == true ) tint(64, 64, 40); //RGB: Night Mode
-image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
