@@ -77,17 +77,27 @@ void setup()
   //
   //Background Image must be single executed code
   if ( nightMode == false ) tint(255, 50); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
-  if ( nightMode == true ) tint(64, 64, 40, 128); //RGB: Night Mode
+  if ( nightMode == true ) tint(64, 64, 40, 50); //RGB: Night Mode
   image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
 }//End setup
 //
-void draw() {
-}//End draw
+void draw() {}//End draw
 //
-void keyPressed() {
-}//End keyPressed
+void keyPressed() {}//End keyPressed
 //
 void mousePressed() {
+  //  
+  //Mouse Pressed will control background image
+  if ( mouseButton == LEFT) {
+    nightMode = true;
+    tint(64, 64, 40, 50); //RGB: Night Mode
+    image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
+  }
+  if ( mouseButton == RIGHT ) {
+    nightMode = false;
+    tint();
+    image(pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
+  }
 }//End mousePressed
 //
 //End Main Program
