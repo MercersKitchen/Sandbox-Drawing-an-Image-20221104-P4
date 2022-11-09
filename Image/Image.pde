@@ -5,8 +5,7 @@
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
-float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
-Boolean widthLarger=false, heightLarger=false;
+float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
 PImage pic;
 Boolean nightMode=true;
 //
@@ -24,6 +23,8 @@ void setup()
   int picHeight = 600;
   //
   //Image Orientation: Landscape, Square, Portrait
+  float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
+  Boolean widthLarger=false, heightLarger=false;
   if ( picWidth >= picHeight ) { //True if Landscape or Square
     largerDimension = picWidth;
     smallerDimension = picHeight;
@@ -36,7 +37,6 @@ void setup()
   //
   //Teaching Example: width is known to be larger
   //Better Image Stretch Algorithm
-  float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
   if ( appWidth >= picWidth ) {
     picWidthAdjusted = appWidth; //Stretching larger dimension
     //
@@ -81,9 +81,11 @@ void setup()
   image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
 }//End setup
 //
-void draw() {}//End draw
+void draw() {
+}//End draw
 //
-void keyPressed() {}//End keyPressed
+void keyPressed() {
+}//End keyPressed
 //
 void mousePressed() {
   //  
