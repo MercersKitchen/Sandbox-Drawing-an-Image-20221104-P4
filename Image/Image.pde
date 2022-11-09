@@ -22,6 +22,7 @@ void setup()
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
   int picWidth = 800;
   int picHeight = 600;
+  //
   //Image Orientation: Landscape, Square, Portrait
   if ( picWidth >= picHeight ) { //True if Landscape or Square
     largerDimension = picWidth;
@@ -31,6 +32,28 @@ void setup()
     largerDimension = picHeight;
     smallerDimension = picWidth;
     heightLarger = true;
+  }
+  //
+  //Teaching Example: width is known to be larger
+  //Better Image Stretch Algorithm
+  float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
+  if ( appWidth >= picWidth ) {
+    picWidthAdjusted = appWidth; //Stretching larger dimension
+    //
+    if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
+    if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
+    //
+    if ( appHeight >= picHeight ) {
+      //Calculated Dimension b/c smaller than width
+      if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
+      if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
+      picHeightAdjusted = picWidthAdjusted * imageHeightRatio;
+    } else {
+      //Image smaller than CANVAS needs separate algorithm
+    }
+  } else {
+    //Image smaller than CANVAS, needs separate algorithm
+    println("CANVAS is smaller than Image");
   }
   //
 }//End setup
@@ -55,27 +78,7 @@ void mousePressed() {
  if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
  */
 //
-//Better Image Stretch Algorithm
-float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
-//We know the width is the larger dimension
-if ( appWidth >= picWidth ) {
-  picWidthAdjusted = appWidth; //Stretching larger dimension
-  //
-  if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
-  if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
-  //
-  if ( appHeight >= picHeight ) {
-    //Calculated Dimension b/c smaller than width
-    if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
-    if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
-    picHeightAdjusted = picWidthAdjusted * imageHeightRatio;
-  } else {
-    //Image smaller than CANVAS needs separate algorithm
-  }
-} else {
-  //Image smaller than CANVAS, needs separate algorithm
-}
-//
+
 //Population
 pic = loadImage("../Images Used/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
 backgroundImageX = appWidth*0;
