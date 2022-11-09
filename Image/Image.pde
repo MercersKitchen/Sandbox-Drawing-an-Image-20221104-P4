@@ -12,7 +12,7 @@ int tintDayMode=255, tintDayModeOpacity=50, tintRed=64, tintGreen=64, tintBlue=4
 //
 void setup()
 {
-  size(1000, 800); //Landscape
+  size(800, 600); //Landscape
   //Copy Display Algorithm from Hello World
   appWidth = width;
   appHeight = height;
