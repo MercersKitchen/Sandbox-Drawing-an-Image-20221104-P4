@@ -41,13 +41,15 @@ void setup()
     picWidthAdjusted = appWidth; //Stretching larger dimension
     //
     if ( widthLarger == true ) imageWidthRatio = largerDimension / largerDimension;
-    if ( heightLarger == true ) imageWidthRatio = smallerDimension / largerDimension;
     //
     if ( appHeight >= picHeight ) {
       //Calculated Dimension b/c smaller than width
       if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
-      if ( heightLarger == true ) imageHeightRatio = largerDimension / largerDimension;
       picHeightAdjusted = picWidthAdjusted * imageHeightRatio;
+      if ( appHeight < picHeightAdjusted ) {
+        println("STOP: image is too big for CANVAS");
+        exit(); //stop further use of the APP
+      }
     } else {
       //Image smaller than CANVAS needs separate algorithm
     }
