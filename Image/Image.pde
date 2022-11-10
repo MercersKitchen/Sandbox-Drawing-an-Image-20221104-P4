@@ -80,7 +80,7 @@ void setup()
   //
   //Population
   pic = loadImage("../Images Used/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
-  pic2 = loadImage("../Images Used/");
+  pic2 = loadImage("../Images Used/Landscape/bike.jpg");
   pic3 = loadImage("../Images Used/");
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
