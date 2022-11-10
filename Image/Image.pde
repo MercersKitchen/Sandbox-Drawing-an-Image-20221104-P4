@@ -26,16 +26,16 @@ void setup()
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
   int picWidth = 800;
   int picHeight = 600;
-  int picWidth2 = 325;
-  int picHeight2 = 485;
-  //int picWidth3 = ;
-  //int picHeight3 = ;
+  int picWidth2 = 860;
+  int picHeight2 = 529;
+  //int picWidth3 = 325;
+  //int picHeight3 = 485;
   //
   //Image Orientation: Landscape, Square, Portrait
   float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
   float smallerDimension2, largerDimension2, imageWidthRatio2=0.0, imageHeightRatio2=0.0;
   float smallerDimension3, largerDimension3, imageWidthRatio3=0.0, imageHeightRatio3=0.0;
-  Boolean widthLarger=false, heightLarger=false, widthLarger2=false, heightLarger2=false;;
+  Boolean widthLarger=false, heightLarger=false, widthLarger2=false, heightLarger2=false;
   if ( picWidth >= picHeight ) { //True if Landscape or Square
     largerDimension = picWidth;
     smallerDimension = picHeight;
@@ -53,11 +53,13 @@ void setup()
     picWidthAdjusted2 = picWidth2; //stretch or reduce
     imageHeightRatio2 = smallerDimension2 / largerDimension2;
     picHeightAdjusted2 = picWidthAdjusted2 * imageHeightRatio2;
+    println("here", picWidthAdjusted2, picHeightAdjusted2);
   } else { //False if Portrait
     largerDimension2 = picHeight2;
     smallerDimension2 = picWidth2;
     heightLarger2 = true;
     //Portrait Image larger image to smaller rectangle (or larger)
+    println("here, else");
   }
   //
   //Teaching Example: width is known to be larger
@@ -121,7 +123,7 @@ void setup()
 void draw()
 {
   image(pic2, topX, topY, picWidthAdjusted2, picHeightAdjusted2);
-  image(pic3, bottomX, bottomY, bottomWidth, bottomHeight); 
+  image(pic3, bottomX, bottomY, bottomWidth, bottomHeight);
 }//End draw
 //
 void keyPressed() {
