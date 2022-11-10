@@ -45,22 +45,6 @@ void setup()
     smallerDimension = picWidth;
     heightLarger = true;
   }
-  if ( picWidth2 >= picHeight2 ) { //True if Landscape or Square
-    largerDimension2 = picWidth2;
-    smallerDimension2 = picHeight2;
-    widthLarger2 = true;
-    //Landscape Image larger image to smaller rectangle (or larger)
-    picWidthAdjusted2 = picWidth2; //stretch or reduce
-    imageHeightRatio2 = smallerDimension2 / largerDimension2;
-    picHeightAdjusted2 = picWidthAdjusted2 * imageHeightRatio2;
-    println("here", picWidthAdjusted2, picHeightAdjusted2);
-  } else { //False if Portrait
-    largerDimension2 = picHeight2;
-    smallerDimension2 = picWidth2;
-    heightLarger2 = true;
-    //Portrait Image larger image to smaller rectangle (or larger)
-    println("here, else");
-  }
   //
   //Teaching Example: width is known to be larger
   //Better Image Stretch Algorithm
@@ -114,6 +98,27 @@ void setup()
   rect( topX, topY, topWidth, topHeight );
   rect( bottomX, bottomY, bottomWidth, bottomHeight );
   //
+  //Algorithm uses rect-variables
+  if ( picWidth2 >= picHeight2 ) { //True if Landscape or Square
+    largerDimension2 = picWidth2;
+    smallerDimension2 = picHeight2;
+    widthLarger2 = true;
+    //Landscape Image larger image to smaller rectangle (or larger)
+    picWidthAdjusted2 = topWidth; //stretch or reduce
+    imageHeightRatio2 = smallerDimension2 / largerDimension2;
+    picHeightAdjusted2 = picWidthAdjusted2 * imageHeightRatio2;
+    println("here", picWidthAdjusted2, picHeightAdjusted2);
+    if ( picHeightAdjusted2 > topHeight ) {
+      println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }
+  } else { //False if Portrait
+    largerDimension2 = picHeight2;
+    smallerDimension2 = picWidth2;
+    heightLarger2 = true;
+    //Portrait Image larger image to smaller rectangle (or larger)
+    //Students to create
+  }
   //Background Image must be single executed code
   if ( nightMode == false ) tint(tintDayMode, tintDayModeOpacity); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
   if ( nightMode == true ) tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //RGB: Night Mode
