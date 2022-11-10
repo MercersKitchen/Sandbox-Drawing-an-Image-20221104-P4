@@ -8,6 +8,8 @@ float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageH
 float topX, topY, topWidth, topHeight;
 float bottomX, bottomY, bottomWidth, bottomHeight;
 float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
+float picWidthAdjusted2=0.0, picHeightAdjusted2=0.0;
+float picWidthAdjusted3=0.0, picHeightAdjusted3=0.0;
 PImage pic, pic2, pic3;
 Boolean nightMode=false;
 int tintDayMode=255, tintDayModeOpacity=50, tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85;
@@ -31,7 +33,8 @@ void setup()
   //
   //Image Orientation: Landscape, Square, Portrait
   float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
-  float smallerDimension2, largerDimension2;
+  float smallerDimension2, largerDimension2, imageWidthRatio2=0.0, imageHeightRatio2=0.0;
+  float smallerDimension3, largerDimension3, imageWidthRatio3=0.0, imageHeightRatio3=0.0;
   Boolean widthLarger=false, heightLarger=false, widthLarger2=false, heightLarger2=false;;
   if ( picWidth >= picHeight ) { //True if Landscape or Square
     largerDimension = picWidth;
@@ -47,6 +50,9 @@ void setup()
     smallerDimension2 = picHeight2;
     widthLarger2 = true;
     //Landscape Image larger image to smaller rectangle (or larger)
+    picWidthAdjusted2 = picWidth2; //stretch or reduce
+    imageHeightRatio2 = smallerDimension2 / largerDimension2;
+    picHeightAdjusted2 = picWidthAdjusted2 * imageHeightRatio2;
   } else { //False if Portrait
     largerDimension2 = picHeight2;
     smallerDimension2 = picWidth2;
@@ -79,7 +85,7 @@ void setup()
   }
   //
   //Population
-  pic = loadImage("../Images Used/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
+  pic = loadImage("../Images Used/Landscape/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
   pic2 = loadImage("../Images Used/Landscape/bike.jpg");
   pic3 = loadImage("../Images Used/Portrait/10-star-wars-darth-vader-portrait-wallpaper-1-325x485.jpg");
   backgroundImageX = appWidth*0;
