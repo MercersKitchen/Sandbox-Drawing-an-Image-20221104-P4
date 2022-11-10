@@ -24,8 +24,8 @@ void setup()
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
   int picWidth = 800;
   int picHeight = 600;
-  int picWidth2 = ;
-  int picHeight2 = ;
+  int picWidth2 = 325;
+  int picHeight2 = 485;
   //int picWidth3 = ;
   //int picHeight3 = ;
   //
