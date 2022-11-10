@@ -120,7 +120,7 @@ void setup()
 //
 void draw()
 {
-  image(pic2, topX, topY, topWidth, topHeight);
+  image(pic2, topX, topY, picWidthAdjusted2, picHeightAdjusted2);
   image(pic3, bottomX, bottomY, bottomWidth, bottomHeight); 
 }//End draw
 //
