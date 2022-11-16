@@ -24,11 +24,11 @@ void setup()
   //Image Dimensions for Aspect Ratio
   //Obi-wan-star-wars-jedi-23864621-800-600.jpg
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
-  int picWidth = 800;
+  int picWidth = 800; //Obi image
   int picHeight = 600;
-  int picWidth2 = 860;
+  int picWidth2 = 860;//Bike image
   int picHeight2 = 529;
-  //int picWidth3 = 325;
+  int picWidth3 = 325; //Darth image
   int picHeight3 = 485;
   //
   //Image Orientation: Landscape, Square, Portrait
@@ -36,6 +36,7 @@ void setup()
   float smallerDimension2, largerDimension2, imageWidthRatio2=0.0, imageHeightRatio2=0.0;
   float smallerDimension3, largerDimension3, imageWidthRatio3=0.0, imageHeightRatio3=0.0;
   Boolean widthLarger=false, heightLarger=false, widthLarger2=false, heightLarger2=false;
+  Boolean widthLarger3=false, heightLarger3=false;
   if ( picWidth >= picHeight ) { //True if Landscape or Square
     largerDimension = picWidth;
     smallerDimension = picHeight;
@@ -118,12 +119,40 @@ void setup()
     heightLarger2 = true;
     //Portrait Image larger image to smaller rectangle (or larger)
     //Students to create
-    picHeightAdjusted2 = bottomHeight; //stretch or reduce
+    picHeightAdjusted2 = topHeight; //stretch or reduce
     imageWidthRatio2 = smallerDimension2 / largerDimension2;
     picWidthAdjusted2 = picHeightAdjusted2 * imageWidthRatio2;
     println("here", picWidthAdjusted2, picHeightAdjusted2);
     if ( picWidthAdjusted2 > topWidth ) {
       println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }
+  }
+  if ( picWidth3 >= picHeight3 ) { //True if Landscape or Square
+    largerDimension3 = picWidth3;
+    smallerDimension3 = picHeight3;
+    widthLarger3 = true;
+    //Landscape Image larger image to smaller rectangle (or larger)
+    picWidthAdjusted3 = bottomWidth; //stretch or reduce
+    imageHeightRatio3 = smallerDimension3 / largerDimension3;
+    picHeightAdjusted3 = picWidthAdjusted3 * imageHeightRatio3;
+    println("here", picWidthAdjusted3, picHeightAdjusted3);
+    if ( picHeightAdjusted3 > bottomHeight ) {
+      println("STOP: image height is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }
+  } else { //False if Portrait
+    largerDimension3 = picHeight3;
+    smallerDimension3 = picWidth3;
+    heightLarger3 = true;
+    //Portrait Image larger image to smaller rectangle (or larger)
+    //Students to create
+    picHeightAdjusted3 = bottomHeight; //stretch or reduce
+    imageWidthRatio3 = smallerDimension3 / largerDimension3;
+    picWidthAdjusted3 = picHeightAdjusted3 * imageWidthRatio3;
+    println("here", picWidthAdjusted3, picHeightAdjusted3);
+    if ( picWidthAdjusted3 > bottomWidth ) {
+      println("STOP: image width is too big for rectangle layout");
       exit(); //stop further use of the APP
     }
   }
@@ -136,7 +165,7 @@ void setup()
 void draw()
 {
   image(pic2, topX, topY, picWidthAdjusted2, picHeightAdjusted2);
-  image(pic3, bottomX, bottomY, bottomWidth, bottomHeight);
+  image(pic3, bottomX, bottomY, picWidthAdjusted3, picHeightAdjusted3);
 }//End draw
 //
 void keyPressed() {
