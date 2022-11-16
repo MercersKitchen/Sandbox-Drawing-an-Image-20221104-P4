@@ -29,7 +29,7 @@ void setup()
   int picWidth2 = 860;
   int picHeight2 = 529;
   //int picWidth3 = 325;
-  //int picHeight3 = 485;
+  int picHeight3 = 485;
   //
   //Image Orientation: Landscape, Square, Portrait
   float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
@@ -118,6 +118,9 @@ void setup()
     heightLarger2 = true;
     //Portrait Image larger image to smaller rectangle (or larger)
     //Students to create
+    picHeightAdjusted2 = bottomHeight; //stretch or reduce
+    imageHeightRatio2 = smallerDimension2 / largerDimension2;
+    picHeightAdjusted2 = picWidthAdjusted2 * imageHeightRatio2;
   }
   //Background Image must be single executed code
   if ( nightMode == false ) tint(tintDayMode, tintDayModeOpacity); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
