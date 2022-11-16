@@ -119,8 +119,13 @@ void setup()
     //Portrait Image larger image to smaller rectangle (or larger)
     //Students to create
     picHeightAdjusted2 = bottomHeight; //stretch or reduce
-    imageHeightRatio2 = smallerDimension2 / largerDimension2;
-    picWidthAdjusted2 = picHeightAdjusted2 * imageHeightRatio2;
+    imageWidthRatio2 = smallerDimension2 / largerDimension2;
+    picWidthAdjusted2 = picHeightAdjusted2 * imageWidthRatio2;
+    println("here", picWidthAdjusted2, picHeightAdjusted2);
+    if ( picWidthAdjusted2 > topWidth ) {
+      println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }
   }
   //Background Image must be single executed code
   if ( nightMode == false ) tint(tintDayMode, tintDayModeOpacity); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
