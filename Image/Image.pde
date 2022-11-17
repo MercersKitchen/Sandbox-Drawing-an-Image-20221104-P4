@@ -1,7 +1,3 @@
-//To Do, add the printlns to verify the values
-//Algorithm works when image is bigger than the CANVAS, not smaller
-//Different Algorithm is necessary - work to get above 65%
-//
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
@@ -94,11 +90,7 @@ void setup()
   println("Larger Image dimension is:", largerDimension);
   println("Adjusted Image dimesnions are (stretch is goal):", picWidthAdjusted, picHeightAdjusted);
   //
-  //Rectangular Layout and Image Drawing to CANVAS
-  //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  rect( topX, topY, topWidth, topHeight );
-  rect( bottomX, bottomY, bottomWidth, bottomHeight );
-  //
+  
   //Algorithm uses rect-variables
   if ( picWidth2 >= picHeight2 ) { //True if Landscape or Square
     largerDimension2 = picWidth2;
@@ -156,6 +148,12 @@ void setup()
       exit(); //stop further use of the APP
     }
   }
+  //
+  //Rectangular Layout and Image Drawing to CANVAS
+  //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+  rect( topX, topY, topWidth, topHeight );
+  rect( bottomX, bottomY, bottomWidth, bottomHeight );
+  //
   //Background Image must be single executed code
   if ( nightMode == false ) tint(tintDayMode, tintDayModeOpacity); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
   if ( nightMode == true ) tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //RGB: Night Mode
