@@ -51,22 +51,22 @@ void setup()
   Boolean widthLarger=false, heightLarger=false, widthLarger2=false, heightLarger2=false;
   Boolean widthLarger3=false, heightLarger3=false;
   if ( picWidth1 >= picHeight1 ) { //True if Landscape or Square
-    largerDimension2 = picWidth2;
-    smallerDimension2 = picHeight2;
+    largerDimension1 = picWidth1;
+    smallerDimension1 = picHeight1;
     //
     //Landscape Image larger image to smaller rectangle (or larger)
     picWidthAdjusted1 = backgroundImageWidth; //stretch or reduce
     imageHeightRatio1 = smallerDimension1 / largerDimension1;
     picHeightAdjusted1 = picWidthAdjusted1 * imageHeightRatio1;
+    //
     if ( picHeightAdjusted1 > backgroundImageHeight ) { //Error Catch
       println("STOP: image is too big for rectangle layout");
       exit(); //stop further use of the APP
     }
   } else { //False if Portrait
-    largerDimension2 = picHeight2;
-    smallerDimension2 = picWidth2;
-    heightLarger2 = true;
-    //Portrait Image larger image to smaller rectangle (or larger)
+    largerDimension1 = picHeight1;
+    smallerDimension1 = picWidth1;
+    //
     //Students to create
     picHeightAdjusted2 = topHeight; //stretch or reduce
     imageWidthRatio2 = smallerDimension2 / largerDimension2;
