@@ -57,8 +57,9 @@ void setup()
     imageHeightRatio1 = smallerDimension1 / largerDimension1;
     picHeightAdjusted1 = picWidthAdjusted1 * imageHeightRatio1;
     //
-    if ( picHeightAdjusted1 > backgroundImageHeight ) { //Error Catch
-      println("STOP: image is too big for rectangle layout");
+    if ( picHeightAdjusted1 > backgroundImageHeight+1 ) { //Error Catch
+      println (picHeightAdjusted1, backgroundImageHeight);
+      println("STOP: image background height is too big for rectangle layout");
       exit(); //stop further use of the APP
     }
   } else { //False if Portrait
@@ -70,7 +71,7 @@ void setup()
     imageWidthRatio1 = smallerDimension1 / largerDimension1;
     picWidthAdjusted1 = picHeightAdjusted1 * imageWidthRatio1;
     if ( picWidthAdjusted1 > backgroundImageWidth ) {
-      println("STOP: image is too big for rectangle layout");
+      println("STOP: image background width is too big for rectangle layout");
       exit(); //stop further use of the APP
     }
   }
