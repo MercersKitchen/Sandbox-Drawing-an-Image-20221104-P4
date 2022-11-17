@@ -18,7 +18,7 @@ void setup()
   appHeight = height;
   //
   //Population
-  pic = loadImage("../Images Used/Landscape/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
+  pic1 = loadImage("../Images Used/Landscape/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
   pic2 = loadImage("../Images Used/Landscape/bike.jpg");
   pic3 = loadImage("../Images Used/Portrait/10-star-wars-darth-vader-portrait-wallpaper-1-325x485.jpg");
   backgroundImageX = appWidth*0;
@@ -37,8 +37,8 @@ void setup()
   //Image Dimensions for Aspect Ratio: image meta data
   //Note: meta explored in MP3's or music files
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
-  int picWidth = 800; //Obi image
-  int picHeight = 600;
+  int picWidth1 = 800; //Obi image
+  int picHeight1 = 600;
   int picWidth2 = 860;//Bike image
   int picHeight2 = 529;
   int picWidth3 = 325; //Darth image
@@ -50,6 +50,43 @@ void setup()
   float smallerDimension3, largerDimension3, imageWidthRatio3=0.0, imageHeightRatio3=0.0;
   Boolean widthLarger=false, heightLarger=false, widthLarger2=false, heightLarger2=false;
   Boolean widthLarger3=false, heightLarger3=false;
+  if ( picWidth1 >= picHeight1 ) { //True if Landscape or Square
+    largerDimension2 = picWidth2;
+    smallerDimension2 = picHeight2;
+    //
+    //Landscape Image larger image to smaller rectangle (or larger)
+    picWidthAdjusted2 = topWidth; //stretch or reduce
+    imageHeightRatio2 = smallerDimension2 / largerDimension2;
+    picHeightAdjusted2 = picWidthAdjusted2 * imageHeightRatio2;
+    println("here", picWidthAdjusted2, picHeightAdjusted2);
+    if ( picHeightAdjusted2 > topHeight ) {
+      println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }
+  } else { //False if Portrait
+    largerDimension2 = picHeight2;
+    smallerDimension2 = picWidth2;
+    heightLarger2 = true;
+    //Portrait Image larger image to smaller rectangle (or larger)
+    //Students to create
+    picHeightAdjusted2 = topHeight; //stretch or reduce
+    imageWidthRatio2 = smallerDimension2 / largerDimension2;
+    picWidthAdjusted2 = picHeightAdjusted2 * imageWidthRatio2;
+    println("here", picWidthAdjusted2, picHeightAdjusted2);
+    if ( picWidthAdjusted2 > topWidth ) {
+      println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
   if ( picWidth >= picHeight ) { //True if Landscape or Square
     largerDimension = picWidth;
     smallerDimension = picHeight;
@@ -93,34 +130,7 @@ void setup()
   //
   
   //Algorithm uses rect-variables
-  if ( picWidth2 >= picHeight2 ) { //True if Landscape or Square
-    largerDimension2 = picWidth2;
-    smallerDimension2 = picHeight2;
-    widthLarger2 = true;
-    //Landscape Image larger image to smaller rectangle (or larger)
-    picWidthAdjusted2 = topWidth; //stretch or reduce
-    imageHeightRatio2 = smallerDimension2 / largerDimension2;
-    picHeightAdjusted2 = picWidthAdjusted2 * imageHeightRatio2;
-    println("here", picWidthAdjusted2, picHeightAdjusted2);
-    if ( picHeightAdjusted2 > topHeight ) {
-      println("STOP: image is too big for rectangle layout");
-      exit(); //stop further use of the APP
-    }
-  } else { //False if Portrait
-    largerDimension2 = picHeight2;
-    smallerDimension2 = picWidth2;
-    heightLarger2 = true;
-    //Portrait Image larger image to smaller rectangle (or larger)
-    //Students to create
-    picHeightAdjusted2 = topHeight; //stretch or reduce
-    imageWidthRatio2 = smallerDimension2 / largerDimension2;
-    picWidthAdjusted2 = picHeightAdjusted2 * imageWidthRatio2;
-    println("here", picWidthAdjusted2, picHeightAdjusted2);
-    if ( picWidthAdjusted2 > topWidth ) {
-      println("STOP: image is too big for rectangle layout");
-      exit(); //stop further use of the APP
-    }
-  }
+  
   if ( picWidth3 >= picHeight3 ) { //True if Landscape or Square
     largerDimension3 = picWidth3;
     smallerDimension3 = picHeight3;
