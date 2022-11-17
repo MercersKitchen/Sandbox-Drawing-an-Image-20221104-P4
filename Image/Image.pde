@@ -68,10 +68,9 @@ void setup()
     smallerDimension1 = picWidth1;
     //
     //Students to create
-    picHeightAdjusted2 = topHeight; //stretch or reduce
-    imageWidthRatio2 = smallerDimension2 / largerDimension2;
-    picWidthAdjusted2 = picHeightAdjusted2 * imageWidthRatio2;
-    println("here", picWidthAdjusted2, picHeightAdjusted2);
+    picHeightAdjusted1 = backgroundImageHeight; //stretch or reduce
+    imageWidthRatio1 = smallerDimension1 / largerDimension1;
+    picWidthAdjusted1 = picHeightAdjusted1 * imageWidthRatio1;
     if ( picWidthAdjusted2 > topWidth ) {
       println("STOP: image is too big for rectangle layout");
       exit(); //stop further use of the APP
