@@ -154,13 +154,13 @@ void mousePressed() {
     nightMode = true;
     rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
     tint(64, 64, 40, 85); //RGB: Night Mode
-    image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
+    image( pic1, backgroundImageX, backgroundImageY, picWidthAdjusted1, picHeightAdjusted1);
   }
   if ( mouseButton == RIGHT ) {
     nightMode = false;
     rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
     tint(255, 50); //Gray Scale: use 1/2 tint value for white (i.e. 128/256=1/2)
-    image(pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
+    image(pic1, backgroundImageX, backgroundImageY, picWidthAdjusted1, picHeightAdjusted1);
   }
 }//End mousePressed
 //
