@@ -55,8 +55,8 @@ void setup()
     smallerDimension2 = picHeight2;
     //
     //Landscape Image larger image to smaller rectangle (or larger)
-    picWidthAdjusted2 = topWidth; //stretch or reduce
-    imageHeightRatio2 = smallerDimension2 / largerDimension2;
+    picWidthAdjusted1 = backgroundImageWidth; //stretch or reduce
+    imageHeightRatio1 = smallerDimension1 / largerDimension1;
     picHeightAdjusted2 = picWidthAdjusted2 * imageHeightRatio2;
     println("here", picWidthAdjusted2, picHeightAdjusted2);
     if ( picHeightAdjusted2 > topHeight ) {
