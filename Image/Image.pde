@@ -17,6 +17,23 @@ void setup()
   appWidth = width;
   appHeight = height;
   //
+  //Population
+  pic = loadImage("../Images Used/Landscape/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
+  pic2 = loadImage("../Images Used/Landscape/bike.jpg");
+  pic3 = loadImage("../Images Used/Portrait/10-star-wars-darth-vader-portrait-wallpaper-1-325x485.jpg");
+  backgroundImageX = appWidth*0;
+  backgroundImageY = appHeight*0;
+  backgroundImageWidth = appWidth-1;
+  backgroundImageHeight = appHeight-1;
+  topX = appWidth * 1/4;
+  topY = appHeight * 1/20;
+  topWidth = appWidth * 1/2;
+  topHeight = appHeight * 13/20;
+  bottomX = appWidth *1/2;
+  bottomY = appHeight * 3/4;
+  bottomWidth = appWidth * 1/4;
+  bottomHeight = appHeight * 4/20;
+  //
   //Image Dimensions for Aspect Ratio
   //Obi-wan-star-wars-jedi-23864621-800-600.jpg
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
@@ -67,23 +84,7 @@ void setup()
     println("CANVAS is smaller than Image");
   }
   //
-  //Population
-  pic = loadImage("../Images Used/Landscape/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
-  pic2 = loadImage("../Images Used/Landscape/bike.jpg");
-  pic3 = loadImage("../Images Used/Portrait/10-star-wars-darth-vader-portrait-wallpaper-1-325x485.jpg");
-  backgroundImageX = appWidth*0;
-  backgroundImageY = appHeight*0;
-  backgroundImageWidth = appWidth-1;
-  backgroundImageHeight = appHeight-1;
-  topX = appWidth * 1/4;
-  topY = appHeight * 1/20;
-  topWidth = appWidth * 1/2;
-  topHeight = appHeight * 13/20;
-  bottomX = appWidth *1/2;
-  bottomY = appHeight * 3/4;
-  bottomWidth = appWidth * 1/4;
-  bottomHeight = appHeight * 4/20;
-  //
+  
   //Verify Variable Values after Algorithm
   println("App Width:", appWidth, " and App Height:", appHeight);
   println("Image dimensions are:", picWidth, picHeight);
