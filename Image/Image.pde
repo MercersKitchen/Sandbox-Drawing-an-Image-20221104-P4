@@ -69,12 +69,63 @@ void setup()
     picHeightAdjusted1 = backgroundImageHeight; //stretch or reduce
     imageWidthRatio1 = smallerDimension1 / largerDimension1;
     picWidthAdjusted1 = picHeightAdjusted1 * imageWidthRatio1;
+    if ( picWidthAdjusted1 > backgroundImageWidth ) {
+      println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }
+  }
+  if ( picWidth1 >= picHeight1 ) { //True if Landscape or Square
+    largerDimension1 = picWidth1;
+    smallerDimension1 = picHeight1;
+    //
+    //Landscape Image larger image to smaller rectangle (or larger)
+    picWidthAdjusted1 = backgroundImageWidth; //stretch or reduce
+    imageHeightRatio1 = smallerDimension1 / largerDimension1;
+    picHeightAdjusted1 = picWidthAdjusted1 * imageHeightRatio1;
+    //
+    if ( picHeightAdjusted1 > backgroundImageHeight ) { //Error Catch
+      println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }
+  } else { //False if Portrait
+    largerDimension1 = picHeight1;
+    smallerDimension1 = picWidth1;
+    //
+    //Students to create
+    picHeightAdjusted1 = backgroundImageHeight; //stretch or reduce
+    imageWidthRatio1 = smallerDimension1 / largerDimension1;
+    picWidthAdjusted1 = picHeightAdjusted1 * imageWidthRatio1;
     if ( picWidthAdjusted2 > topWidth ) {
       println("STOP: image is too big for rectangle layout");
       exit(); //stop further use of the APP
     }
   }
-  
+  if ( picWidth1 >= picHeight1 ) { //True if Landscape or Square
+    largerDimension1 = picWidth1;
+    smallerDimension1 = picHeight1;
+    //
+    //Landscape Image larger image to smaller rectangle (or larger)
+    picWidthAdjusted1 = backgroundImageWidth; //stretch or reduce
+    imageHeightRatio1 = smallerDimension1 / largerDimension1;
+    picHeightAdjusted1 = picWidthAdjusted1 * imageHeightRatio1;
+    //
+    if ( picHeightAdjusted1 > backgroundImageHeight ) { //Error Catch
+      println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }
+  } else { //False if Portrait
+    largerDimension1 = picHeight1;
+    smallerDimension1 = picWidth1;
+    //
+    //Students to create
+    picHeightAdjusted1 = backgroundImageHeight; //stretch or reduce
+    imageWidthRatio1 = smallerDimension1 / largerDimension1;
+    picWidthAdjusted1 = picHeightAdjusted1 * imageWidthRatio1;
+    if ( picWidthAdjusted2 > topWidth ) {
+      println("STOP: image is too big for rectangle layout");
+      exit(); //stop further use of the APP
+    }
+  }
   
   
   
