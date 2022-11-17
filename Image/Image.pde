@@ -45,11 +45,9 @@ void setup()
   int picHeight3 = 485;
   //
   //Image Orientation: Landscape, Square, Portrait
-  float smallerDimension, largerDimension, imageWidthRatio=0.0, imageHeightRatio=0.0;
+  float smallerDimension1, largerDimension1, imageWidthRatio1=0.0, imageHeightRatio1=0.0;
   float smallerDimension2, largerDimension2, imageWidthRatio2=0.0, imageHeightRatio2=0.0;
   float smallerDimension3, largerDimension3, imageWidthRatio3=0.0, imageHeightRatio3=0.0;
-  Boolean widthLarger=false, heightLarger=false, widthLarger2=false, heightLarger2=false;
-  Boolean widthLarger3=false, heightLarger3=false;
   if ( picWidth1 >= picHeight1 ) { //True if Landscape or Square
     largerDimension1 = picWidth1;
     smallerDimension1 = picHeight1;
