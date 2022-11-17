@@ -74,16 +74,16 @@ void setup()
       exit(); //stop further use of the APP
     }
   }
-  if ( picWidth1 >= picHeight1 ) { //True if Landscape or Square
-    largerDimension1 = picWidth1;
-    smallerDimension1 = picHeight1;
+  if ( picWidth2 >= picHeight2 ) { //True if Landscape or Square
+    largerDimension2 = picWidth2;
+    smallerDimension2 = picHeight2;
     //
     //Landscape Image larger image to smaller rectangle (or larger)
-    picWidthAdjusted1 = backgroundImageWidth; //stretch or reduce
-    imageHeightRatio1 = smallerDimension1 / largerDimension1;
-    picHeightAdjusted1 = picWidthAdjusted1 * imageHeightRatio1;
+    picWidthAdjusted2 = topWidth; //stretch or reduce
+    imageHeightRatio2 = smallerDimension2 / largerDimension2;
+    picHeightAdjusted2 = picWidthAdjusted2 * imageHeightRatio2;
     //
-    if ( picHeightAdjusted1 > backgroundImageHeight ) { //Error Catch
+    if ( picHeightAdjusted2 > backgroundImageHeight ) { //Error Catch
       println("STOP: image is too big for rectangle layout");
       exit(); //stop further use of the APP
     }
