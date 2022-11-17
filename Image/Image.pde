@@ -57,7 +57,7 @@ void setup()
     //Landscape Image larger image to smaller rectangle (or larger)
     picWidthAdjusted1 = backgroundImageWidth; //stretch or reduce
     imageHeightRatio1 = smallerDimension1 / largerDimension1;
-    picHeightAdjusted2 = picWidthAdjusted2 * imageHeightRatio2;
+    picHeightAdjusted1 = picWidthAdjusted1 * imageHeightRatio1;
     println("here", picWidthAdjusted2, picHeightAdjusted2);
     if ( picHeightAdjusted2 > topHeight ) {
       println("STOP: image is too big for rectangle layout");
