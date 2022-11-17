@@ -114,14 +114,14 @@ void setup()
       exit(); //stop further use of the APP
     }
   } else { //False if Portrait
-    largerDimension1 = picHeight1;
-    smallerDimension1 = picWidth1;
+    largerDimension3 = picHeight3;
+    smallerDimension3 = picWidth3;
     //
     //Students to create
-    picHeightAdjusted1 = backgroundImageHeight; //stretch or reduce
-    imageWidthRatio1 = smallerDimension1 / largerDimension1;
-    picWidthAdjusted1 = picHeightAdjusted1 * imageWidthRatio1;
-    if ( picWidthAdjusted2 > topWidth ) {
+    picHeightAdjusted3 = bottomHeight; //stretch or reduce
+    imageWidthRatio3 = smallerDimension3 / largerDimension3;
+    picWidthAdjusted3 = picHeightAdjusted3 * imageWidthRatio3;
+    if ( picWidthAdjusted3 > bottomWidth ) {
       println("STOP: image is too big for rectangle layout");
       exit(); //stop further use of the APP
     }
