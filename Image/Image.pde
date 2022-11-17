@@ -58,8 +58,7 @@ void setup()
     picWidthAdjusted1 = backgroundImageWidth; //stretch or reduce
     imageHeightRatio1 = smallerDimension1 / largerDimension1;
     picHeightAdjusted1 = picWidthAdjusted1 * imageHeightRatio1;
-    println("here", picWidthAdjusted2, picHeightAdjusted2);
-    if ( picHeightAdjusted2 > topHeight ) {
+    if ( picHeightAdjusted1 > backgroundImageHeight ) { //Error Catch
       println("STOP: image is too big for rectangle layout");
       exit(); //stop further use of the APP
     }
