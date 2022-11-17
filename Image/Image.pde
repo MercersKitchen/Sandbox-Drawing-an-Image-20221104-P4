@@ -157,13 +157,13 @@ void setup()
   //Background Image must be single executed code
   if ( nightMode == false ) tint(tintDayMode, tintDayModeOpacity); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
   if ( nightMode == true ) tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //RGB: Night Mode
-  image( pic, backgroundImageX, backgroundImageY, picWidthAdjusted, picHeightAdjusted);
+  image( pic1, backgroundImageX, backgroundImageY, picWidthAdjusted1, picHeightAdjusted1);
 }//End setup
 //
 void draw()
 {
-  image(pic2, topX, topY, picWidthAdjusted2, picHeightAdjusted2);
-  image(pic3, bottomX, bottomY, picWidthAdjusted3, picHeightAdjusted3);
+  image( pic2, topX, topY, picWidthAdjusted2, picHeightAdjusted2 );
+  image( pic3, bottomX, bottomY, picWidthAdjusted3, picHeightAdjusted3 );
 }//End draw
 //
 void keyPressed() {
